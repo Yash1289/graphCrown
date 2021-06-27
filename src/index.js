@@ -1,3 +1,4 @@
+import "@babel/polyfill"
 import { GraphQLServer } from "graphql-yoga";
 import Query from "./resolvers/query";
 import Mutation from "./resolvers/Mutation";
@@ -21,6 +22,6 @@ const server = new GraphQLServer({
     }
 })
 
-server.start(() => {
+server.start({ port : process.env.PORT || 4000 } , () => {
     console.log("The graphql server is up and running")
 })

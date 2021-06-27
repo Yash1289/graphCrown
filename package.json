@@ -4,12 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon src/index.js -e js,graphql --exec babel-node",
+        "start": "node dist/index.js",
+        "heroku-postbuild": "babel src --out-dir dist --copy-files",
+        "dev": "nodemon src/index.js -e js,graphql --exec babel-node",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Yash",
     "license": "ISC",
     "dependencies": {
+        "@babel/polyfill": "^7.12.1",
         "@prisma/client": "^2.25.0",
         "babel-cli": "^6.26.0",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
