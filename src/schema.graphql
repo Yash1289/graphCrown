@@ -1,0 +1,43 @@
+
+type Collection {
+    id : ID!
+    title : String!
+    routeName : String!
+    items : [Item!]!
+}
+
+type Item {
+    id : ID! 
+    name : String!
+    imageUrl : String!
+    price : String!
+    collection : Collection!
+}
+
+type Query {
+    collections : [Collection!]! ,
+    limitedCollections(take : Int) : [Collection!]!,
+    getCollection(routeName : String) : Collection
+    items : [Item!]!
+}
+
+type Mutation {
+    createCollection(data : CreateCollectionInput) : Collection!
+}
+
+input CreateUserInput {
+    name : String!
+    email : String!
+}
+
+input CreateCollectionInput {
+    routeName : String!
+    title : String!
+    items : CreateItemInput
+}
+ 
+ input CreateItemInput {
+     name : String! ,
+     image : String! ,
+     price : Int!
+ }
