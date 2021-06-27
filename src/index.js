@@ -1,7 +1,7 @@
 import "@babel/polyfill/noConflict"
 import { GraphQLServer } from "graphql-yoga";
 import Query from "./resolvers/query";
-import Mutation from "./resolvers/Mutation";
+import Mutation from "./resolvers/mutation";
 import { PrismaClient } from ".prisma/client"
 import { v4 as uuidv4 } from "uuid"
 import getSelectedObjects from "./utils/getSelectedObjects";
