@@ -1,4 +1,4 @@
-import "@babel/polyfill/noConflict"
+import "@babel/polyfill/noConflict.js"
 import { GraphQLServer } from "graphql-yoga";
 import Query from "./resolvers/query";
 import Mutation from "./resolvers/Mutation";
